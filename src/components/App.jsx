@@ -1,16 +1,30 @@
-export const App = () => {
-  return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
-  );
-};
+import { Component } from "react";
+import { ContactForm } from "./ContactForm/ContactForm";
+import { Container } from "./ContactForm/ContactForm.styled";
+import { ContactList } from "./ContactList/ContactList";
+import { GlobalStyle } from "./GlobalStyle";
+//import shortid from 'shortid';
+
+export class App extends Component {
+  state = {
+    contacts: []
+  }
+  
+  handleSubmit = (contact) => {
+    this.setState({ contacts: [...this.state.contacts, contact] })
+  }
+  
+  render() {
+    const { contacts } = this.state;
+    
+    return (
+      <Container>
+           <ContactForm title="Phonebook" handleSubmit={this.handleSubmit}/>
+            <ContactList title="Contacts"
+                characterData={contacts}
+            />
+            <GlobalStyle/>
+      </Container>         
+    );
+}
+}
