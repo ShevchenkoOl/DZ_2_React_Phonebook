@@ -11,7 +11,7 @@ export class App extends Component {
   }
   
   handleSubmit = (contact) => {
-    this.setState({ contacts: [...this.state.contacts, contact] })
+    this.setState({ contacts: [...this.state.contacts, contact]})
   }
   
   render() {
@@ -19,10 +19,15 @@ export class App extends Component {
     
     return (
       <Container>
-           <ContactForm title="Phonebook" handleSubmit={this.handleSubmit}/>
+            <ContactForm title="Phonebook" handleSubmit={this.handleSubmit}/>
+            {/* <ContactList title="Contacts"
+                         characterData={contacts}
+            /> */}
+            {this.contacts.length>0 ? (
             <ContactList title="Contacts"
-                characterData={contacts}
-            />
+                         characterData={contacts}
+            />):(<h2>Your phonebook is empty. Please add contact.</h2>)}
+           
             <GlobalStyle/>
       </Container>         
     );
