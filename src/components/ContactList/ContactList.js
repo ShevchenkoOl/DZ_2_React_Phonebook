@@ -1,14 +1,14 @@
 import React from 'react';
-import { Title } from '../ContactForm/ContactForm.styled';
+import { Title, Button } from '../ContactForm/ContactForm.styled';
 
 
 const TableBody = props => { 
     const rows = props.characterData.map((row, index) => {
         return (
             <ul key={index}>
-                <li>{row.name}</li>
-                <li>{row.number}</li>
-                
+                <li>{row.name} {row.number}</li>
+                <Button type="button">Delete</Button>
+
             </ul>
         );
     });
