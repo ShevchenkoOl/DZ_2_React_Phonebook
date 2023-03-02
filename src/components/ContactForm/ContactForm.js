@@ -1,9 +1,10 @@
 import { Component } from 'react';
+import shortid from 'shortid';
 import { Button, Input, Label, Sector, Title } from './ContactForm.styled';
-//let id=0;
 
 export class ContactForm extends Component {
   state = {
+    id: 0,
     name: '',
     number:''
   }
@@ -21,7 +22,7 @@ export class ContactForm extends Component {
   submitForm = (e) => {
     e.preventDefault()
     this.props.handleSubmit(this.state)
-    this.setState(this.State)
+    this.setState({id: shortid.generate(),name:'', number:''})
   }
 
   render() {

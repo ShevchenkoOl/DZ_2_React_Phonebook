@@ -1,7 +1,8 @@
 import { Component } from "react";
 import { ContactForm } from "./ContactForm/ContactForm";
-import { Container } from "./ContactForm/ContactForm.styled";
+import { Container, Title } from "./ContactForm/ContactForm.styled";
 import { ContactList } from "./ContactList/ContactList";
+// { Filter } from "./Fiter/Filter";
 import { GlobalStyle } from "./GlobalStyle";
 //import shortid from 'shortid';
 
@@ -10,23 +11,29 @@ export class App extends Component {
     contacts: []
   }
   
-  handleSubmit = (contact) => {
+
+  addContact = (contact) => {
     this.setState({ contacts: [...this.state.contacts, contact]})
   }
   
+  deleteContact = contactId => {
+    this.setState(({ contacts }) => ({
+      contacts: contacts.filter(contact => contact.id !== contactId),
+    }));
+  };
+
   render() {
     const { contacts } = this.state;
     
     return (
       <Container>
-            <ContactForm title="Phonebook" handleSubmit={this.handleSubmit}/>
+            <ContactForm title="Phonebook" handleSubmit={this.addContact}/>
+            
+            {contacts.length>0 ? (
             <ContactList title="Contacts"
-                         characterData={contacts}
-            />
-            {/* {contacts.length>0 ? (
-            <ContactList title="Contacts"
-                         characterData={contacts}
-            />):(<h2>Your phonebook is empty. Please add contact.</h2>)} */}
+                         contacts={contacts}
+                         onDeleteContact={this.deleteContact}
+            />):(<Title>Your phonebook is empty. Please add contact.</Title>)}
            
             <GlobalStyle/>
       </Container>         
