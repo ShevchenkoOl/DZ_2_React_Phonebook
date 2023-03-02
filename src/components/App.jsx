@@ -23,7 +23,7 @@ export class App extends Component {
             {/* <ContactList title="Contacts"
                          characterData={contacts}
             /> */}
-            {this.contacts.length>0 ? (
+            {contacts.length>0 ? (
             <ContactList title="Contacts"
                          characterData={contacts}
             />):(<h2>Your phonebook is empty. Please add contact.</h2>)}
