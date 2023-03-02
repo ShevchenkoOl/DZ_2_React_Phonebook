@@ -44,9 +44,9 @@ export class ContactForm extends Component {
                        </Label>
                        <Label>Number
                             <Input
-                            type="text"
+                            type="tel"
                             name="nomber"
-                            id="name"
+                            id="number"
                             value={number}
                             onChange={this.handleChange}
                             placeholder="123-45-67"
