@@ -5,11 +5,11 @@ import { Title } from '../ContactForm/ContactForm.styled';
 const TableBody = props => { 
     const rows = props.characterData.map((row, index) => {
         return (
-            <tr key={index}>
-                <td>{row.name}</td>
-                <td>{row.job}</td>
+            <ul key={index}>
+                <li>{row.name}</li>
+                <li>{row.number}</li>
                 
-            </tr>
+            </ul>
         );
     });
 

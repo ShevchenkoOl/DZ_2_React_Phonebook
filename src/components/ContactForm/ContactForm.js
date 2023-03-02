@@ -4,7 +4,8 @@ import { Button, Input, Label, Sector, Title } from './ContactForm.styled';
 
 export class ContactForm extends Component {
   state = {
-    name: ''
+    name: '',
+    number:''
   }
 
 
@@ -24,7 +25,7 @@ export class ContactForm extends Component {
   }
 
   render() {
-    const { name } = this.state;
+    const { name, number } = this.state;
   
     return (
       <Title>
@@ -39,6 +40,16 @@ export class ContactForm extends Component {
                             value={name}
                             onChange={this.handleChange}
                             placeholder="Ivan Ivanov"
+                            />
+                       </Label>
+                       <Label>Number
+                            <Input
+                            type="text"
+                            name="nomber"
+                            id="name"
+                            value={number}
+                            onChange={this.handleChange}
+                            placeholder="123-45-67"
                             />
                        </Label>
                        {/* <Button type="button" value="Submit" onClick={this.submitForm}>Add contact</Button> */}

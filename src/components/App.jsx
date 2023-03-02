@@ -20,13 +20,13 @@ export class App extends Component {
     return (
       <Container>
             <ContactForm title="Phonebook" handleSubmit={this.handleSubmit}/>
-            {/* <ContactList title="Contacts"
-                         characterData={contacts}
-            /> */}
-            {contacts.length>0 ? (
             <ContactList title="Contacts"
                          characterData={contacts}
-            />):(<h2>Your phonebook is empty. Please add contact.</h2>)}
+            />
+            {/* {contacts.length>0 ? (
+            <ContactList title="Contacts"
+                         characterData={contacts}
+            />):(<h2>Your phonebook is empty. Please add contact.</h2>)} */}
            
             <GlobalStyle/>
       </Container>         
