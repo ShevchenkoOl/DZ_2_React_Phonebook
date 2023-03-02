@@ -41,7 +41,8 @@ export class ContactForm extends Component {
                             placeholder="Ivan Ivanov"
                             />
                        </Label>
-                       <Button type="button" value="Submit" onClick={this.submitForm}>Add contact</Button>
+                       {/* <Button type="button" value="Submit" onClick={this.submitForm}>Add contact</Button> */}
+                       <Button value="Submit" onClick={this.submitForm}>Add contact</Button>
                     </form>
                 </Sector>
       </Title>
