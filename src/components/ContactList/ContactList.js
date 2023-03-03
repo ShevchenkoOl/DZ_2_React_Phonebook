@@ -6,7 +6,17 @@ import { List, Item, Button} from './ContactList.styled';
 export const ContactList = ({ contacts, onDeleteContact })=>{
     return (
       <List>
-        <Filter/>
+        <form>
+                <Label>Find contacts by name
+                        <Input
+                            type="text"
+                            name="filter"
+                            id="filter"
+                            //value={name}
+                            onChange={this.handleChange}
+                            />
+                       </Label>
+        </form>
         {contacts.map(({ id, name, number }) => (
           <Item key={id}>
             <p>
