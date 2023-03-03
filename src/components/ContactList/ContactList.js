@@ -1,6 +1,4 @@
-
-//import { Title } from 'components/ContactForm/ContactForm.styled';
-//import { Filter } from 'components/Fiter/Filter';
+import { PropTypes } from 'prop-types';
 import React from 'react';
 import { List, Item, Button} from './ContactList.styled';
 
@@ -9,7 +7,6 @@ export const ContactList = ({ contacts, onDeleteContact })=>{
     return (
       
       <List>
-        {/* <Filter/> */}
         {contacts.map(({ id, name, number }) => (
           <Item key={id}>
             <p>
@@ -24,4 +21,9 @@ export const ContactList = ({ contacts, onDeleteContact })=>{
     );
   }
 
+
+  ContactList.propTypes={
+    contacts: PropTypes.array.isRequired,
+    onDeleteContact: PropTypes.func.isRequired
+  };
 

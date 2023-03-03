@@ -8,11 +8,7 @@ import shortid from 'shortid';
 
 export class App extends Component {
   state = {
-    contacts: [{ id: shortid.generate(), name: 'Rosa Felice', number: '775-44-55' },
-    { id: shortid.generate(), name: 'Kevin Kleine', number: '885-14-14' },
-    { id: shortid.generate(), name: 'Giorgio Armani', number: '874-55-21' },
-    { id: shortid.generate(), name: 'Henri Ford', number: '785-15-63' },
-              ],
+    contacts: [],
     filter: ''
   }
 
@@ -65,7 +61,8 @@ export class App extends Component {
 
   render() {
     const { contacts, filter } = this.state;
-    
+    const visibleContacts = this.getVisibleContacts();
+
     return (
       <Container>
             <ContactForm title="Phonebook" handleSubmit={this.addContact}/>
@@ -74,7 +71,7 @@ export class App extends Component {
             <Title>Contacts
             <Filter value={filter} onChange={this.changeFilter}/>
             <ContactList title="Contacts"
-                         contacts={contacts}
+                         contacts={visibleContacts}
                          onDeleteContact={this.deleteContact}
             />
             </Title>
