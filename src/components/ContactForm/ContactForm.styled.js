@@ -46,8 +46,9 @@ export const Button = styled.button `
 `;
 export const Label = styled.label `
   display: block;
+  margin-top:30px;
   margin-bottom: 20px;
-  
+  text-align: center;
   font-weight: 500;
   font-size: 20px;
 `;

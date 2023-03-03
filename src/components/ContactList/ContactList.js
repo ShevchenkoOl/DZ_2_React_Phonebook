@@ -1,22 +1,15 @@
 
+//import { Title } from 'components/ContactForm/ContactForm.styled';
+//import { Filter } from 'components/Fiter/Filter';
 import React from 'react';
 import { List, Item, Button} from './ContactList.styled';
-// import{Filter} from '../components/Filter/Filter'
+
 
 export const ContactList = ({ contacts, onDeleteContact })=>{
     return (
+      
       <List>
-        <form>
-                <label>Find contacts by name
-                        <input
-                            type="text"
-                            name="filter"
-                            id="filter"
-                            //value={name}
-                            onChange={this.handleChange}
-                            />
-                       </label>
-        </form>
+        {/* <Filter/> */}
         {contacts.map(({ id, name, number }) => (
           <Item key={id}>
             <p>
