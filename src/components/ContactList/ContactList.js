@@ -1,11 +1,12 @@
 
 import React from 'react';
 import { List, Item, Button} from './ContactList.styled';
-
+import{Filter} from '../components/Filter/Filter'
 
 export const ContactList = ({ contacts, onDeleteContact })=>{
     return (
       <List>
+        <Filter/>
         {contacts.map(({ id, name, number }) => (
           <Item key={id}>
             <p>

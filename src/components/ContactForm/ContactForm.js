@@ -53,7 +53,6 @@ export class ContactForm extends Component {
                             placeholder="123-45-67"
                             />
                        </Label>
-                       {/* <Button type="button" value="Submit" onClick={this.submitForm}>Add contact</Button> */}
                        <Button value="Submit" onClick={this.submitForm}>Add contact</Button>
                     </form>
                 </Sector>
