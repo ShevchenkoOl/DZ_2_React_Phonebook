@@ -7,15 +7,15 @@ export const ContactList = ({ contacts, onDeleteContact })=>{
     return (
       <List>
         <form>
-                <Label>Find contacts by name
-                        <Input
+                <label>Find contacts by name
+                        <input
                             type="text"
                             name="filter"
                             id="filter"
                             //value={name}
                             onChange={this.handleChange}
                             />
-                       </Label>
+                       </label>
         </form>
         {contacts.map(({ id, name, number }) => (
           <Item key={id}>
